@@ -1,6 +1,16 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* custom colors */
+  --color-primary: #b8e5df;
+  --color-primary-light: #deeeed;
+  --color-secondary: #feaa95;
+  --color-accent-dark: #0f172b;
+
+  --font-family-sans: Arial, sans-serif;
+}
+
+/* Apply Arial globally */
+body {
+  font-family: var(--font-family-sans);
 }
