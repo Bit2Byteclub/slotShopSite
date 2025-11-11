@@ -7,10 +7,10 @@ import { motion } from "framer-motion";
 interface SlotLinkProps {
   href: string;
   text: string;
-  icon?: React.ReactNode; // Optional icon prop
+  icon: React.ReactNode;
 }
 
-const SlotLink: React.FC<SlotLinkProps> = ({ href, text, icon }) => {
+export default function SlotLink({ href, text, icon }: SlotLinkProps) {
   const pathname = usePathname();
   const lineHeight = 28; // Height of one line of text
   const rolls = 8; // Number of times to roll through
@@ -104,6 +104,4 @@ const SlotLink: React.FC<SlotLinkProps> = ({ href, text, icon }) => {
       </div>
     </div>
   );
-};
-
-export default SlotLink;
+}

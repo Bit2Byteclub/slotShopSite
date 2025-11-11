@@ -4,22 +4,21 @@ import Hamburger from "hamburger-react";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { IoMdHome } from "react-icons/io";
-import { MdPolicy } from "react-icons/md";
-import { IoIosContacts } from "react-icons/io";
-import { GiTwoCoins } from "react-icons/gi";
+import { motion, AnimatePresence } from "framer-motion";
 
-export default function HamburgerComponent() {
+interface HamburgerComponentProps {
+  links: {
+    href: string;
+    text: string;
+    icon: React.ReactNode;
+  }[];
+}
+
+export default function HamburgerComponent({ links }: HamburgerComponentProps) {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
 
-  const links = [
-    { href: "/", text: "Home", icon: <IoMdHome /> },
-    { href: "/slotMachines", text: "Slot Machines", icon: <GiTwoCoins /> },
-    { href: "/policy", text: "Policy", icon: <MdPolicy /> },
-    { href: "/contactUs", text: "Contact Us", icon: <IoIosContacts /> },
-  ];
-
+  // helper function to get the correct class depending on if the current path is active
   const getLinkClass = (path: string) => {
     return pathname === path
       ? "text-white bg-accent-dark rounded-full m-1 p-3 flex items-center gap-3"
@@ -28,27 +27,37 @@ export default function HamburgerComponent() {
 
   return (
     <div className="md:hidden">
-      {/* Hamburger button - only visible on mobile */}
+      {/* Hamburger button that is only visible on mobile */}
       <Hamburger toggled={isOpen} toggle={setIsOpen} size={24} color="black" />
 
-      {/* Dropdown menu - only visible on mobile when open */}
-      {isOpen && (
-        <div className="absolute left-0 right-0 bg-white mt-3 shadow-lg rounded-3xl">
-          <nav className="flex flex-col ">
-            {links.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={getLinkClass(link.href)}
-                onClick={() => setIsOpen(false)}
-              >
-                <span className="text-xl">{link.icon}</span>
-                <span>{link.text}</span>
-              </Link>
-            ))}
-          </nav>
-        </div>
-      )}
+      {/* Dropdown menu */}
+      {/* animate presence is for slide animation */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -15 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -15 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            className="absolute left-0 right-0 bg-white mt-3 shadow-lg rounded-3xl overflow-hidden"
+          >
+            <nav className="flex flex-col">
+              {/* Map each hamburger link to its respective class */}
+              {links.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={getLinkClass(link.href)}
+                  onClick={() => setIsOpen(false)}
+                >
+                  <span className="text-xl">{link.icon}</span>
+                  <span>{link.text}</span>
+                </Link>
+              ))}
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

@@ -7,6 +7,13 @@ import { MdPolicy } from "react-icons/md";
 import { IoIosContacts } from "react-icons/io";
 import { GiTwoCoins } from "react-icons/gi";
 
+const links = [
+  { href: "/", text: "Home", icon: <IoMdHome /> },
+  { href: "/slotMachines", text: "Slot Machines", icon: <GiTwoCoins /> },
+  { href: "/policy", text: "Policy", icon: <MdPolicy /> },
+  { href: "/contactUs", text: "Contact Us", icon: <IoIosContacts /> },
+];
+
 const Navbar: React.FC = () => {
   // actual navbar with custom tag component for the slot machine effect
   return (
@@ -20,22 +27,18 @@ const Navbar: React.FC = () => {
 
           {/* Desktop navigation links - HIDDEN on mobile, VISIBLE on md+ */}
           <div className="hidden md:flex items-center gap-x-7">
-            <SlotLink href="/" text="Home" icon={<IoMdHome />} />
-            <SlotLink
-              href="/slotMachines"
-              text="Slot Machines"
-              icon={<GiTwoCoins />}
-            />
-            <SlotLink href="/policy" text="Policy" icon={<MdPolicy />} />
-            <SlotLink
-              href="/contactUs"
-              text="Contact Us"
-              icon={<IoIosContacts />}
-            />
+            {links.map((link) => (
+              <SlotLink
+                key={link.href}
+                href={link.href}
+                text={link.text}
+                icon={link.icon}
+              />
+            ))}
           </div>
 
           {/* Mobile hamburger menu - VISIBLE on mobile, HIDDEN on md+ */}
-          <HamburgerComponent />
+          <HamburgerComponent links={links} />
         </div>
       </div>
     </nav>
