@@ -38,7 +38,7 @@ function Product({
       <div className="p-4 space-y-4">
         <div>
           <h3 className="text-xl text-gray-900">{name}</h3>
-          <p className="text-sm text-[#62748E] mt-1">Condition:</p>
+          <p className="text-[#62748E] mt-1">Condition:</p>
           <p className="text-[#62748E] border-b border-gray-300 pb-1">
             {condition}
           </p>

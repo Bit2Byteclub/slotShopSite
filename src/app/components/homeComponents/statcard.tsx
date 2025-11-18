@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import type { ReactNode } from "react";
 
 interface StatCardProps {
@@ -28,13 +29,14 @@ function StatCard({
   descName = "",
 }: StatCardProps) {
   return (
-    <div
+    <motion.div
+      whileHover={{ scale: 1.1 }}
       className={`flex flex-col ${width} ${height} items-center justify-center gap-2 ${padding} ${bgColor} ${rounded} shadow-sm ${className}`}
     >
       {children}
       <p className={`${titleName}`}>{title}</p>
       <p className={`text-[#314158] text-center ${descName}`}>{description}</p>
-    </div>
+    </motion.div>
   );
 }
 
