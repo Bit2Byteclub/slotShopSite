@@ -8,3 +8,4 @@ export const headphoneIcon = "./icons/headphoneIcon.svg";
 export const StockIcon = "./icons/stockIcon.svg";
 export const thumbUpIcon = "./icons/thumbUpIcon.svg";
 export const starIcon = "./icons/starIcon.svg";
+export const RevStarIcon = "./icons/reviewStarIcon.svg";

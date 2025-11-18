@@ -4,7 +4,13 @@ import { useState } from "react";
 import "./globals.css";
 
 import * as icon from "./assets/icons";
-import { Icon, StatCard, Product, Tag } from "./components/homeComponents";
+import {
+  Icon,
+  StatCard,
+  Product,
+  Tag,
+  Review,
+} from "./components/homeComponents";
 
 export default function Home() {
   // Everything here will likely be moved down later because I think
@@ -162,6 +168,24 @@ export default function Home() {
             price="1,199"
           ></Product>
         </div>
+      </div>
+      {/* Review Section */}
+      <div className="flex flex-row flex-wrap items-center justify-center gap-4 m-24">
+        <Review
+          comment="Purchased 3 machines for my bar. They've already paid for themselves in just 4 months! Great quality and service."
+          name="Mike Richardson"
+          info="Bar Owner, Texas"
+        ></Review>
+        <Review
+          comment="The team went above and beyond. They helped me pick the right machines and handled all the setup. Highly recommend!"
+          name="Sarah Chen"
+          info="Entertainment Center, California"
+        ></Review>
+        <Review
+          comment="Best investment I've made for my gaming lounge. Customers love the variety and the machines run flawlessly."
+          name="James Martinez"
+          info="Gaming Lounge Owner, Nevada"
+        ></Review>
       </div>
     </div>
   );
