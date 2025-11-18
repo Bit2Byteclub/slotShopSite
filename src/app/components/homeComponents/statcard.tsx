@@ -32,8 +32,8 @@ function StatCard({
       className={`flex flex-col ${width} ${height} items-center justify-center gap-2 ${padding} ${bgColor} ${rounded} shadow-sm ${className}`}
     >
       {children}
-      <p className={`text-gray-900 ${titleName}`}>{title}</p>
-      <p className={`text-gray-600 text-center ${descName}`}>{description}</p>
+      <p className={`${titleName}`}>{title}</p>
+      <p className={`text-[#314158] text-center ${descName}`}>{description}</p>
     </div>
   );
 }

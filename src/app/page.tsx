@@ -4,7 +4,7 @@ import { useState } from "react";
 import "./globals.css";
 
 import * as icon from "./assets/icons";
-import { Icon, StatCard } from "./components/homeComponents";
+import { Icon, StatCard, Product, Tag } from "./components/homeComponents";
 
 export default function Home() {
   // Everything here will likely be moved down later because I think
@@ -102,6 +102,66 @@ export default function Home() {
         <StatCard title="Great" description="Customer Service">
           <Icon icon={icon.headphoneIcon} iconSize="w-6 h-6"></Icon>
         </StatCard>
+      </div>
+      {/* Featured Products */}
+      <div className="flex flex-col gap-6 flex-wrap items-center justify-center m-6">
+        <div className="flex flex-col gap-4 items-center justify-center">
+          <Tag
+            title="Hot Deals"
+            className="w-fit px-3 rounded-2xl flex flex-nowrap items-center bg-secondary/20 border border-secondary"
+            icon={
+              <Icon
+                icon={icon.starIcon}
+                bgColor="bg-transparent"
+                className="rounded-full flex items-center justify-center"
+              ></Icon>
+            }
+          ></Tag>
+
+          <p>Featured Slot Machines</p>
+          <p className="w-[672px] h-[48px] text-[#45556C] text-center mx-auto">
+            Hand-picked machines that deliver maximum entertainment and
+            reliability. Limited Inventory Available.
+          </p>
+        </div>
+
+        <div className="flex flex-row gap-6 items-center justify-center">
+          <Product
+            tag={
+              <Tag
+                title="Best Seller"
+                className="w-fit px-3 py-1 rounded-2xl flex flex-nowrap items-center gap-3 bg-secondary shadow-lg/20"
+              ></Tag>
+            }
+            name="IGT S-Plus"
+            condition="Excellent"
+            price="899"
+          ></Product>
+
+          <Product
+            tag={
+              <Tag
+                title="New Arrival"
+                className="w-fit px-3 py-1 rounded-2xl flex flex-nowrap items-center gap-3 bg-primary shadow-lg/20"
+              ></Tag>
+            }
+            name="Williams Bluebird"
+            condition="Like New"
+            price="1,499"
+          ></Product>
+
+          <Product
+            tag={
+              <Tag
+                title="Hot Deal"
+                className="w-fit px-3 py-1 rounded-2xl flex flex-nowrap items-center gap-3 bg-secondary shadow-lg/20"
+              ></Tag>
+            }
+            name="Bally Alpha 2"
+            condition="Refurbished"
+            price="1,199"
+          ></Product>
+        </div>
       </div>
     </div>
   );
