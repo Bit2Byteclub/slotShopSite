@@ -4,7 +4,7 @@ import { useState } from "react";
 import "./globals.css";
 
 import * as icon from "./assets/icons";
-import { Icon } from "./components/homeComponents";
+import { Icon, StatCard } from "./components/homeComponents";
 
 export default function Home() {
   // Everything here will likely be moved down later because I think
@@ -82,6 +82,26 @@ export default function Home() {
             />
           </div>
         </div>
+      </div>
+      <div className="w-full flex flex-row items-contain justify-center gap-6 m-6">
+        <StatCard
+          title="300+ Models"
+          description="Vintage to classics to latest video reels"
+        >
+          <Icon icon={icon.StockIcon} iconSize="w-6 h-6"></Icon>
+        </StatCard>
+        <StatCard
+          title="Vetted Slot Machines"
+          description="High Quality Machines"
+        >
+          <Icon icon={icon.thumbUpIcon} iconSize="w-6 h-6"></Icon>
+        </StatCard>
+        <StatCard title="33+" description="Years Combined Experience">
+          <Icon icon={icon.clockIcon} iconSize="w-6 h-6"></Icon>
+        </StatCard>
+        <StatCard title="Great" description="Customer Service">
+          <Icon icon={icon.headphoneIcon} iconSize="w-6 h-6"></Icon>
+        </StatCard>
       </div>
     </div>
   );

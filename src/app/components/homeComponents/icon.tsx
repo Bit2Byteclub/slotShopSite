@@ -9,7 +9,7 @@ interface IconProps {
 
 function Icon({
   icon,
-  bgColor = "bg-gradient-to-b from-secondary to-primary",
+  bgColor = "bg-gradient-to-b from-primary to-primary-light",
   size = "w-10 h-10 md:w-12 md:h-12",
   iconSize = "w-4 h-4",
   rounded = "rounded-full",

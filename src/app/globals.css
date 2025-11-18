@@ -13,4 +13,5 @@
 /* Apply Arial globally */
 body {
   font-family: var(--font-family-sans);
+  background: linear-gradient(180deg, #deeeed 0%, #ffffff 30%, #deeeed 100%);
 }
