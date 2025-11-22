@@ -9,7 +9,7 @@ interface ReviewProps {
 
 function Review({ comment, name, info, rating = 5 }: ReviewProps) {
   return (
-    <div className="w-full max-w-sm bg-white rounded-xl flex flex-col p-8 gap-6 shadow-lg">
+    <div className="w-90 max-w-sm bg-white rounded-xl flex flex-col p-8 gap-6 shadow-lg">
       {/* Stars */}
       <div className="flex gap-1">
         {Array.from({ length: rating }).map((_, i) => (

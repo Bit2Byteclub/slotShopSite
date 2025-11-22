@@ -89,7 +89,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="w-full flex flex-row items-contain justify-center gap-6 m-6">
+      <div className=" flex flex-row flex-wrap lg:flex-nowrap items-contain justify-center gap-6 lg:m-6">
         <StatCard
           title="300+ Models"
           description="Vintage to classics to latest video reels"
@@ -110,7 +110,7 @@ export default function Home() {
         </StatCard>
       </div>
       {/* Featured Products */}
-      <div className="flex flex-col gap-6 flex-wrap items-center justify-center m-6">
+      <div className="flex flex-col gap-6 flex-wrap items-center justify-center mt-4 sm:m-6">
         <div className="flex flex-col gap-4 items-center justify-center">
           <Tag
             title="Hot Deals"
@@ -125,13 +125,13 @@ export default function Home() {
           ></Tag>
 
           <p>Featured Slot Machines</p>
-          <p className="w-2xl h-12 text-[#45556C] text-center mx-auto">
+          <p className="lg:w-2xl sm:h-12 text-[#45556C] text-center mx-auto">
             Hand-picked machines that deliver maximum entertainment and
             reliability. Limited Inventory Available.
           </p>
         </div>
 
-        <div className="flex flex-row gap-6 items-center justify-center">
+        <div className="flex flex-row flex-wrap mt-4 gap-2 lg:gap-6 items-center justify-center">
           <Product
             tag={
               <Tag
@@ -170,7 +170,7 @@ export default function Home() {
         </div>
       </div>
       {/* Review Section */}
-      <div className="flex flex-row flex-wrap items-center justify-center gap-4 m-24">
+      <div className="flex flex-row flex-wrap items-center justify-center mt-8 gap-2 lg;gap-4 lg:m-24">
         <Review
           comment="Purchased 3 machines for my bar. They've already paid for themselves in just 4 months! Great quality and service."
           name="Mike Richardson"

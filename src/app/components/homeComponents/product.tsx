@@ -19,7 +19,9 @@ function Product({
   className = "",
 }: ProductProps) {
   return (
-    <div className={`w-96 bg-white rounded-2xl overflow-hidden ${className}`}>
+    <div
+      className={`w-90 lg:w-96 bg-white rounded-2xl overflow-hidden ${className}`}
+    >
       {/* Image Section */}
       <div className="relative h-72 p-4 bg-gray-50">
         {image && (
