@@ -13,4 +13,5 @@
 /* Apply Arial globally */
 body {
   font-family: var(--font-family-sans);
+  background: greenyellow;
 }

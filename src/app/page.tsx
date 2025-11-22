@@ -125,7 +125,7 @@ export default function Home() {
           ></Tag>
 
           <p>Featured Slot Machines</p>
-          <p className="w-[672px] h-[48px] text-[#45556C] text-center mx-auto">
+          <p className="w-2xl h-12 text-[#45556C] text-center mx-auto">
             Hand-picked machines that deliver maximum entertainment and
             reliability. Limited Inventory Available.
           </p>

@@ -17,7 +17,7 @@ function Button({ className, text }: ButtonProps) {
       whileTap={{ scale: 0.95 }}
       className={
         className ||
-        `w-[134px] h-[44px] flex items-center justify-center bg-primary rounded-xl`
+        `w-36 h-11 flex items-center justify-center bg-primary rounded-xl`
       }
     >
       {text}

@@ -1,4 +1,6 @@
+import { motion } from "framer-motion";
 import type { ReactNode } from "react";
+import { GiBranchArrow } from "react-icons/gi";
 
 interface TagProps {
   title: string;
@@ -15,7 +17,7 @@ function Tag({
   icon,
   bgColor = "",
   textColor = "text-gray-900",
-  size = "w-[119px] h-[38px]",
+  size = "w-30 h-10",
   rounded = "rounded-2xl",
   className = "",
 }: TagProps) {
@@ -24,7 +26,7 @@ function Tag({
       className={`w-fit flex items-center gap-1 ${size} ${rounded} ${bgColor} ${className}`}
     >
       {icon}
-      <p className={`text-sm ${textColor}`}>{title}</p>
+      <motion.p className={`text-sm ${textColor}`}>{title}</motion.p>
     </div>
   );
 }
