@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { useState } from "react";
 import "./globals.css";
 
+
 import * as icon from "./assets/icons";
 import {
   Icon,
@@ -11,6 +12,7 @@ import {
   Tag,
   Review,
 } from "./components/homeComponents";
+import { motion } from "framer-motion";
 
 export default function Home() {
   // Everything here will likely be moved down later because I think
@@ -31,10 +33,10 @@ export default function Home() {
                   ★ Trusted Since ____
                 </p>
               </div>
-              <h1 className="text-3xl font-semibold mb-1/2">
+              <h1 className="text-3xl font-medium mb-1/2">
                 Vegas-Quality Slots.
               </h1>
-              <h1 className="text-3xl font-semibold mb-6 text-[#B8E5DF]">
+              <h1 className="text-3xl font-medium mb-6 text-[#B8E5DF]">
                 Bargain Prices
               </h1>
               <p className="text-black">
@@ -46,12 +48,14 @@ export default function Home() {
             </div>
 
             <div className="flex gap-3 mt-6">
-              <button className="flex-1 px-4 py-2 bg-[#0F172B] shadow-lg text-white rounded-xl">
+              <motion.button whileHover={{ scale: 1.05 }} 
+              transition={{ duration: 0.3 }} className="flex-1 px-4 py-2 bg-[#0F172B] shadow-lg text-white rounded-xl">
                 Browse 300+ Models
-              </button>
-              <button className="flex-1 px-4 py-2 border border-[#B8E5DF] shadow-lg text-black rounded-xl">
+              </motion.button>
+              <motion.button whileHover={{ scale: 1.05 }} 
+              transition={{ duration: 0.3 }} className="flex-1 px-4 py-2 border border-[#B8E5DF] shadow-lg text-black rounded-xl">
                 Get Free Consultation
-              </button>
+              </motion.button>
             </div>
             {/*Added the icons using the Icon component*/}
             <div className="mt-6 text-[#45556C] flex items-center gap-2">
