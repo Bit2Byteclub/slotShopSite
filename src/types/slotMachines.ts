@@ -15,6 +15,7 @@ export interface SlotInventory {
   max_bet: number | null;     // numeric
   price: number;              // real
   slug: string | null;
+  condition: string | null;
   is_on_sale: boolean | null;
   sale_price: number | null;  // real
 }

@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import { useState } from "react";
 import "./globals.css";
+import FeaturedSlots from "./components/homeComponents/featuredSlots";
 
 
 import * as icon from "./assets/icons";
@@ -136,41 +137,7 @@ export default function Home() {
         </div>
 
         <div className="flex flex-row gap-6 items-center justify-center">
-          <Product
-            tag={
-              <Tag
-                title="Best Seller"
-                className="w-fit px-3 py-1 rounded-2xl flex flex-nowrap items-center gap-3 bg-secondary shadow-lg/20"
-              ></Tag>
-            }
-            name="IGT S-Plus"
-            condition="Excellent"
-            price="899"
-          ></Product>
-
-          <Product
-            tag={
-              <Tag
-                title="New Arrival"
-                className="w-fit px-3 py-1 rounded-2xl flex flex-nowrap items-center gap-3 bg-primary shadow-lg/20"
-              ></Tag>
-            }
-            name="Williams Bluebird"
-            condition="Like New"
-            price="1,499"
-          ></Product>
-
-          <Product
-            tag={
-              <Tag
-                title="Hot Deal"
-                className="w-fit px-3 py-1 rounded-2xl flex flex-nowrap items-center gap-3 bg-secondary shadow-lg/20"
-              ></Tag>
-            }
-            name="Bally Alpha 2"
-            condition="Refurbished"
-            price="1,199"
-          ></Product>
+          <FeaturedSlots/>
         </div>
       </div>
       {/* Review Section */}
