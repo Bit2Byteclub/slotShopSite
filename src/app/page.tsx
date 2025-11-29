@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import { useState } from "react";
 import "./globals.css";
+import FeaturedSlots from "./components/homeComponents/featuredSlots";
 
 import * as icon from "./assets/icons";
 import {
@@ -11,6 +12,7 @@ import {
   Tag,
   Review,
 } from "./components/homeComponents";
+import { motion } from "framer-motion";
 
 export default function Home() {
   // Everything here will likely be moved down later because I think
@@ -31,10 +33,10 @@ export default function Home() {
                   ★ Trusted Since ____
                 </p>
               </div>
-              <h1 className="text-3xl font-semibold mb-1/2">
+              <h1 className="text-3xl font-medium mb-1/2">
                 Vegas-Quality Slots.
               </h1>
-              <h1 className="text-3xl font-semibold mb-6 text-[#B8E5DF]">
+              <h1 className="text-3xl font-medium mb-6 text-[#B8E5DF]">
                 Bargain Prices
               </h1>
               <p className="text-black">
@@ -46,12 +48,20 @@ export default function Home() {
             </div>
 
             <div className="flex gap-3 mt-6">
-              <button className="flex-1 px-4 py-2 bg-[#0F172B] shadow-lg text-white rounded-xl">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+                className="flex-1 px-4 py-2 bg-[#0F172B] shadow-lg text-white rounded-xl"
+              >
                 Browse 300+ Models
-              </button>
-              <button className="flex-1 px-4 py-2 border border-[#B8E5DF] shadow-lg text-black rounded-xl">
+              </motion.button>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+                className="flex-1 px-4 py-2 border border-[#B8E5DF] shadow-lg text-black rounded-xl"
+              >
                 Get Free Consultation
-              </button>
+              </motion.button>
             </div>
             {/*Added the icons using the Icon component*/}
             <div className="mt-6 text-[#45556C] flex items-center gap-2">
@@ -131,42 +141,8 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="flex flex-row flex-wrap mt-4 gap-2 lg:gap-6 items-center justify-center">
-          <Product
-            tag={
-              <Tag
-                title="Best Seller"
-                className="w-fit px-3 py-1 rounded-2xl flex flex-nowrap items-center gap-3 bg-secondary shadow-lg/20"
-              ></Tag>
-            }
-            name="IGT S-Plus"
-            condition="Excellent"
-            price="899"
-          ></Product>
-
-          <Product
-            tag={
-              <Tag
-                title="New Arrival"
-                className="w-fit px-3 py-1 rounded-2xl flex flex-nowrap items-center gap-3 bg-primary shadow-lg/20"
-              ></Tag>
-            }
-            name="Williams Bluebird"
-            condition="Like New"
-            price="1,499"
-          ></Product>
-
-          <Product
-            tag={
-              <Tag
-                title="Hot Deal"
-                className="w-fit px-3 py-1 rounded-2xl flex flex-nowrap items-center gap-3 bg-secondary shadow-lg/20"
-              ></Tag>
-            }
-            name="Bally Alpha 2"
-            condition="Refurbished"
-            price="1,199"
-          ></Product>
+        <div className="flex flex-row gap-6 items-center justify-center">
+          <FeaturedSlots />
         </div>
       </div>
       {/* Review Section */}
