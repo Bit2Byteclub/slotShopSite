@@ -13,6 +13,8 @@ interface StatCardProps {
   rounded?: string;
   titleName?: string;
   descName?: string;
+  hoverScale?: number;
+  isHover?: boolean;
 }
 
 function StatCard({
@@ -27,10 +29,26 @@ function StatCard({
   rounded = "rounded-xl",
   titleName = "",
   descName = "",
+  hoverScale = 1.1,
+  isHover = true,
 }: StatCardProps) {
+  if (isHover === false) {
+    return (
+      <div
+        className={`flex flex-col ${width} ${height} items-center justify-center gap-2 ${padding} ${bgColor} ${rounded} shadow-sm ${className}`}
+      >
+        {children}
+        <p className={`${titleName}`}>{title}</p>
+        <p className={`text-[#314158] text-center ${descName}`}>
+          {description}
+        </p>
+      </div>
+    );
+  }
+
   return (
     <motion.div
-      whileHover={{ scale: 1.1 }}
+      whileHover={{ scale: hoverScale }}
       className={`flex flex-col ${width} ${height} items-center justify-center gap-2 ${padding} ${bgColor} ${rounded} shadow-sm ${className}`}
     >
       {children}

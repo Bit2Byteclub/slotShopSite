@@ -145,6 +145,198 @@ export default function Home() {
           <FeaturedSlots />
         </div>
       </div>
+      {/* Why Choose Us Section */}
+      <div className="flex flex-col gap-6 flex-wrap items-center justify-center mt-4 sm:m-6 p-4">
+        <p>Why Choose Us?</p>
+        <p className="lg:w-2xl sm:h-12 text-[#45556C] text-center mx-auto">
+          We're not just selling machines—we're partnering with you for
+          long-term success.
+        </p>
+
+        <div className="w-full grid grid-cols-6 row-span-3 gap-6">
+          <div className="relative col-span-3 row-span-2">
+            <StatCard
+              width="w-[110%]"
+              height="h-full"
+              bgColor="bg-white"
+              isHover={false}
+              className="block p-15 gap-5 border-l-4 border-primary items-start justify-start"
+              rounded="rounded-3xl"
+              titleName="text-2xl"
+              title="Premium Quality"
+              descName="lg:w-[440px] text-left"
+              description="Professionally refurbished machines tested to perfection. Every slot is casino-ready."
+            >
+              <Tag
+                title="Certified"
+                bgColor="bg-[#F1F5F9]"
+                rounded="rounded-full"
+                size="w-20 h-8"
+              />
+            </StatCard>
+            <div className="absolute -top-5 -left-5 m-2">
+              <Icon
+                icon={icon.ShieldIcon}
+                iconSize="w-6 h-6"
+                size="w-20 h-20"
+                bgColor="bg-primary"
+                className="shadow-lg"
+              ></Icon>
+            </div>
+          </div>
+          <div className="relative col-span-3">
+            <StatCard
+              width="w-[90%]"
+              height="h-full"
+              bgColor="bg-white"
+              isHover={false}
+              className="block p-10 gap-5 items-start justify-start justify-self-end"
+              rounded="rounded-3xl"
+              titleName="text-2xl"
+              title="Unbeatable Prices"
+              descName="text-left pr-10"
+              description="Save up to 70% compared to new machines. Own the excitement without breaking the bank."
+            >
+              <Tag
+                title="Certified"
+                bgColor="bg-[#F1F5F9]"
+                rounded="rounded-full"
+                size="w-20 h-8"
+              />
+            </StatCard>
+            <div className="absolute -top-5 -right-5 m-2">
+              <Icon
+                icon={icon.DollarIcon}
+                iconSize="w-6 h-6"
+                size="w-18 h-18"
+                bgColor="bg-secondary"
+                className="shadow-lg"
+              ></Icon>
+            </div>
+          </div>
+
+          <div className="relative col-span-3">
+            <StatCard
+              width="w-[90%]"
+              height="h-full"
+              bgColor="bg-white"
+              isHover={false}
+              className="block p-10 gap-5 items-start justify-start justify-self-end"
+              rounded="rounded-3xl"
+              titleName="text-2xl"
+              title="Wide Selection"
+              descName="text-left pr-10"
+              description="From classic reels to modern video slots. Find the perfect machine for your venue."
+            >
+              <Tag
+                title="Popular"
+                bgColor="bg-[#F1F5F9]"
+                rounded="rounded-full"
+                size="w-20 h-8"
+              />
+            </StatCard>
+            <div className="absolute -top-5 left-1/2 m-2">
+              <Icon
+                icon={icon.GridIcon}
+                iconSize="w-6 h-6"
+                size="w-18 h-18"
+                bgColor="bg-primary-light"
+                className="shadow-lg"
+              ></Icon>
+            </div>
+          </div>
+          <div className="relative col-span-2">
+            <StatCard
+              width="w-auto"
+              height="h-full"
+              bgColor="bg-gradient-to-r from-primary/10 to-transparent"
+              isHover={false}
+              className="block border border-primary p-8 pl-18 gap-5 items-start justify-start"
+              rounded="rounded-3xl"
+              titleName="text-2xl"
+              title="Nationwide Delivery"
+              descName="text-left"
+              description="White-glove delivery and setup nationwide. We handle the heavy lifting for you."
+            >
+              <Tag
+                title="Free Shipping"
+                bgColor="bg-[#F1F5F9]"
+                rounded="rounded-full"
+                size="w-26 h-8"
+              />
+            </StatCard>
+            <div className="absolute top-1/20 -left-5 m-2">
+              <Icon
+                icon={icon.truckIcon}
+                iconSize="w-6 h-6"
+                size="w-18 h-18"
+                bgColor="bg-primary"
+                className="shadow-lg"
+              ></Icon>
+            </div>
+          </div>
+          <div className="relative col-span-2">
+            <StatCard
+              width="w-auto"
+              height="h-full"
+              bgColor="bg-gradient-to-r from-secondary/10 to-transparent"
+              isHover={false}
+              className="block border border-secondary p-8 pl-18 gap-5 items-start justify-start"
+              rounded="rounded-3xl"
+              titleName="text-2xl"
+              title="Maintenance and Repairs"
+              descName="text-left"
+              description="Each Machine comes with full diagnostic and repair services."
+            >
+              <Tag
+                title="Protected"
+                bgColor="bg-[#F1F5F9]"
+                rounded="rounded-full"
+                size="w-26 h-8"
+              />
+            </StatCard>
+            <div className="absolute top-1/20 -left-5 m-2">
+              <Icon
+                icon={icon.medalIcon}
+                iconSize="w-6 h-6"
+                size="w-18 h-18"
+                bgColor="bg-secondary"
+                className="shadow-lg"
+              ></Icon>
+            </div>
+          </div>
+          <div className="relative col-span-2">
+            <StatCard
+              width="w-auto"
+              height="h-full"
+              bgColor="bg-gradient-to-r from-primary-light/10 to-transparent"
+              isHover={false}
+              className="block border border-primary-light p-8 pl-18 gap-5 items-start justify-start"
+              rounded="rounded-3xl"
+              titleName="text-2xl"
+              title="Expert Support"
+              descName="text-left"
+              description="25+ years in the business. Our team ensures you get the right machine for your needs."
+            >
+              <Tag
+                title="Trusted"
+                bgColor="bg-[#F1F5F9]"
+                rounded="rounded-full"
+                size="w-26 h-8"
+              />
+            </StatCard>
+            <div className="absolute top-1/20 -left-5 m-2">
+              <Icon
+                icon={icon.personIcon}
+                iconSize="w-6 h-6"
+                size="w-18 h-18"
+                bgColor="bg-primary-light"
+                className="shadow-lg"
+              ></Icon>
+            </div>
+          </div>
+        </div>
+      </div>
       {/* Review Section */}
       <div className="flex flex-row flex-wrap items-center justify-center mt-8 gap-2 lg;gap-4 lg:m-24">
         <Review

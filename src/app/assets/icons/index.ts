@@ -9,3 +9,6 @@ export const StockIcon = "./icons/stockIcon.svg";
 export const thumbUpIcon = "./icons/thumbUpIcon.svg";
 export const starIcon = "./icons/starIcon.svg";
 export const RevStarIcon = "./icons/reviewStarIcon.svg";
+export const ShieldIcon = "./icons/shieldIcon.svg";
+export const DollarIcon = "./icons/dollarIcon.svg";
+export const GridIcon = "./icons/gridIcon.svg";

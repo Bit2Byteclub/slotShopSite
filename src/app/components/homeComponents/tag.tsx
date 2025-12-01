@@ -23,10 +23,12 @@ function Tag({
 }: TagProps) {
   return (
     <div
-      className={`w-fit flex items-center gap-1 ${size} ${rounded} ${bgColor} ${className}`}
+      className={`flex items-center justify-center gap-1 ${size} ${rounded} ${bgColor} ${className}`}
     >
       {icon}
-      <motion.p className={`text-sm ${textColor}`}>{title}</motion.p>
+      <motion.p className={`text-sm text-center ${textColor}`}>
+        {title}
+      </motion.p>
     </div>
   );
 }
