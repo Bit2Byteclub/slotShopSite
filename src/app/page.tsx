@@ -153,10 +153,10 @@ export default function Home() {
           long-term success.
         </p>
 
-        <div className="w-full grid grid-cols-6 row-span-3 gap-6">
-          <div className="relative col-span-3 row-span-2">
+        <div className="w-full sm:grid sm:grid-cols-6 sm:row-span-3 gap-6">
+          <div className="mb-4 sm:mb-0 relative col-span-3 row-span-2">
             <StatCard
-              width="w-[110%]"
+              width="sm:w-[110%]"
               height="h-full"
               bgColor="bg-white"
               isHover={false}
@@ -184,13 +184,13 @@ export default function Home() {
               ></Icon>
             </div>
           </div>
-          <div className="relative col-span-3">
+          <div className="mb-4 sm:mb-0 relative col-span-3">
             <StatCard
-              width="w-[90%]"
+              width="sm:w-[90%]"
               height="h-full"
               bgColor="bg-white"
               isHover={false}
-              className="block p-10 gap-5 items-start justify-start justify-self-end"
+              className="block p-8 pl-18 gap-5 items-start justify-start justify-self-end"
               rounded="rounded-3xl"
               titleName="text-2xl"
               title="Unbeatable Prices"
@@ -198,13 +198,13 @@ export default function Home() {
               description="Save up to 70% compared to new machines. Own the excitement without breaking the bank."
             >
               <Tag
-                title="Certified"
+                title="Best Value"
                 bgColor="bg-[#F1F5F9]"
                 rounded="rounded-full"
                 size="w-20 h-8"
               />
             </StatCard>
-            <div className="absolute -top-5 -right-5 m-2">
+            <div className="absolute -top-5 -left-5 sm:left-auto sm:-right-5 m-2">
               <Icon
                 icon={icon.DollarIcon}
                 iconSize="w-6 h-6"
@@ -214,14 +214,13 @@ export default function Home() {
               ></Icon>
             </div>
           </div>
-
-          <div className="relative col-span-3">
+          <div className="mb-4 sm:mb-0 relative col-span-3">
             <StatCard
-              width="w-[90%]"
+              width="sm:w-[90%]"
               height="h-full"
               bgColor="bg-white"
               isHover={false}
-              className="block p-10 gap-5 items-start justify-start justify-self-end"
+              className="block p-8 pl-18 gap-5 items-start justify-start justify-self-end"
               rounded="rounded-3xl"
               titleName="text-2xl"
               title="Wide Selection"
@@ -235,7 +234,7 @@ export default function Home() {
                 size="w-20 h-8"
               />
             </StatCard>
-            <div className="absolute -top-5 left-1/2 m-2">
+            <div className="absolute -top-5 -left-5 sm:left-1/2 m-2">
               <Icon
                 icon={icon.GridIcon}
                 iconSize="w-6 h-6"
@@ -245,7 +244,7 @@ export default function Home() {
               ></Icon>
             </div>
           </div>
-          <div className="relative col-span-2">
+          <div className="mb-4 sm:mb-0 relative col-span-2">
             <StatCard
               width="w-auto"
               height="h-full"
@@ -265,7 +264,7 @@ export default function Home() {
                 size="w-26 h-8"
               />
             </StatCard>
-            <div className="absolute top-1/20 -left-5 m-2">
+            <div className="absolute -top-5 sm:top-1/20 -left-5 m-2">
               <Icon
                 icon={icon.truckIcon}
                 iconSize="w-6 h-6"
@@ -275,7 +274,7 @@ export default function Home() {
               ></Icon>
             </div>
           </div>
-          <div className="relative col-span-2">
+          <div className="mb-4 sm:mb-0 relative col-span-2">
             <StatCard
               width="w-auto"
               height="h-full"
@@ -295,7 +294,7 @@ export default function Home() {
                 size="w-26 h-8"
               />
             </StatCard>
-            <div className="absolute top-1/20 -left-5 m-2">
+            <div className="absolute -top-5 sm:top-1/20 -left-5 m-2">
               <Icon
                 icon={icon.medalIcon}
                 iconSize="w-6 h-6"
@@ -305,7 +304,7 @@ export default function Home() {
               ></Icon>
             </div>
           </div>
-          <div className="relative col-span-2">
+          <div className="mb-4 sm:mb-0 relative col-span-2">
             <StatCard
               width="w-auto"
               height="h-full"
@@ -325,7 +324,7 @@ export default function Home() {
                 size="w-26 h-8"
               />
             </StatCard>
-            <div className="absolute top-1/20 -left-5 m-2">
+            <div className="absolute -top-5 sm:top-1/20 -left-5 m-2">
               <Icon
                 icon={icon.personIcon}
                 iconSize="w-6 h-6"
