@@ -35,7 +35,7 @@ function StatCard({
   if (isHover === false) {
     return (
       <div
-        className={`flex flex-col ${width} ${height} items-center justify-center gap-2 ${padding} ${bgColor} ${rounded} shadow-sm ${className}`}
+        className={`flex flex-col ${width} ${height} items-center justify-center gap-2 ${padding} ${bgColor} ${rounded} shadow-md ${className}`}
       >
         {children}
         <p className={`${titleName}`}>{title}</p>
