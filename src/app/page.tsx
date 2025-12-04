@@ -24,11 +24,12 @@ export default function Home() {
   return (
     <div>
       <div className="w-full max-w-7xl mx-auto rounded-lg  p-6 m-2 font-sans">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-        className="flex flex-row items-stretch gap-30">
+          className="flex flex-row items-stretch gap-30"
+        >
           {/* Left: text and buttons at bottom */}
           <div className="w-1/2 flex flex-col justify-between bg-transparent">
             <div>
@@ -149,12 +150,13 @@ export default function Home() {
       </div>
       {/* Featured Products */}
       <div className="flex flex-col gap-6 flex-wrap items-center justify-center mt-4 sm:m-6">
-        <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        viewport={{ once: true }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.3}}
-        className="flex flex-col gap-4 items-center justify-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          viewport={{ once: true }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3 }}
+          className="flex flex-col gap-4 items-center justify-center"
+        >
           <Tag
             title="Hot Deals"
             className="w-fit px-3 rounded-2xl flex flex-nowrap items-center bg-secondary/20 border border-secondary"
@@ -192,12 +194,19 @@ export default function Home() {
           whileInView="visible"
           variants={{
             hidden: { opacity: 0, y: 20 },
-            visible: { opacity: 1, y: 0, transition: { duration: 0.3, staggerChildren: 0.3 } },
+            visible: {
+              opacity: 1,
+              y: 0,
+              transition: { duration: 0.3, staggerChildren: 0.3 },
+            },
           }}
           className="w-full sm:grid sm:grid-cols-6 sm:row-span-3 gap-6"
         >
           <motion.div
-            variants={{ hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } }}
+            variants={{
+              hidden: { opacity: 0, y: 10 },
+              visible: { opacity: 1, y: 0 },
+            }}
             className="mb-4 sm:mb-0 relative col-span-3 row-span-2"
           >
             <StatCard
@@ -212,7 +221,12 @@ export default function Home() {
               descName="lg:w-[440px] text-left"
               description="Professionally refurbished machines tested to perfection. Every slot is casino-ready."
             >
-              <Tag title="Certified" bgColor="bg-[#F1F5F9]" rounded="rounded-full" size="w-20 h-8" />
+              <Tag
+                title="Certified"
+                bgColor="bg-[#F1F5F9]"
+                rounded="rounded-full"
+                size="w-20 h-8"
+              />
             </StatCard>
 
             <div className="absolute -top-5 -left-5 m-2">
@@ -227,8 +241,11 @@ export default function Home() {
           </motion.div>
 
           <motion.div
-            variants={{ hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } }}
-            className="mb-4 sm:mb-0 relative col-span-3"
+            variants={{
+              hidden: { opacity: 0, y: 10 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            className="mb-4 sm:mb-0 relative col-span-3 grid"
           >
             <StatCard
               width="sm:w-[90%]"
@@ -242,7 +259,12 @@ export default function Home() {
               descName="text-left pr-10"
               description="Save up to 70% compared to new machines. Own the excitement without breaking the bank."
             >
-              <Tag title="Best Value" bgColor="bg-[#F1F5F9]" rounded="rounded-full" size="w-20 h-8" />
+              <Tag
+                title="Best Value"
+                bgColor="bg-[#F1F5F9]"
+                rounded="rounded-full"
+                size="w-20 h-8"
+              />
             </StatCard>
 
             <div className="absolute -top-5 -left-5 sm:left-auto sm:-right-5 m-2">
@@ -257,8 +279,11 @@ export default function Home() {
           </motion.div>
 
           <motion.div
-            variants={{ hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } }}
-            className="mb-4 sm:mb-0 relative col-span-3"
+            variants={{
+              hidden: { opacity: 0, y: 10 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            className="mb-4 sm:mb-0 relative col-span-3 grid"
           >
             <StatCard
               width="sm:w-[90%]"
@@ -272,7 +297,12 @@ export default function Home() {
               descName="text-left pr-10"
               description="From classic reels to modern video slots. Find the perfect machine for your venue."
             >
-              <Tag title="Popular" bgColor="bg-[#F1F5F9]" rounded="rounded-full" size="w-20 h-8" />
+              <Tag
+                title="Popular"
+                bgColor="bg-[#F1F5F9]"
+                rounded="rounded-full"
+                size="w-20 h-8"
+              />
             </StatCard>
 
             <div className="absolute -top-5 -left-5 sm:left-auto sm:-right-5 m-2">
@@ -287,7 +317,10 @@ export default function Home() {
           </motion.div>
 
           <motion.div
-            variants={{ hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } }}
+            variants={{
+              hidden: { opacity: 0, y: 10 },
+              visible: { opacity: 1, y: 0 },
+            }}
             className="mb-4 sm:mb-0 relative col-span-2"
           >
             <StatCard
@@ -302,7 +335,12 @@ export default function Home() {
               descName="text-left"
               description="White-glove delivery and setup nationwide. We handle the heavy lifting for you."
             >
-              <Tag title="Free Shipping" bgColor="bg-[#F1F5F9]" rounded="rounded-full" size="w-26 h-8" />
+              <Tag
+                title="Free Shipping"
+                bgColor="bg-[#F1F5F9]"
+                rounded="rounded-full"
+                size="w-26 h-8"
+              />
             </StatCard>
 
             <div className="absolute -top-5 sm:top-1/20 -left-5 m-2">
@@ -317,7 +355,10 @@ export default function Home() {
           </motion.div>
 
           <motion.div
-            variants={{ hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } }}
+            variants={{
+              hidden: { opacity: 0, y: 10 },
+              visible: { opacity: 1, y: 0 },
+            }}
             className="mb-4 sm:mb-0 relative col-span-2"
           >
             <StatCard
@@ -332,7 +373,12 @@ export default function Home() {
               descName="text-left"
               description="Each Machine comes with full diagnostic and repair services."
             >
-              <Tag title="Protected" bgColor="bg-[#F1F5F9]" rounded="rounded-full" size="w-26 h-8" />
+              <Tag
+                title="Protected"
+                bgColor="bg-[#F1F5F9]"
+                rounded="rounded-full"
+                size="w-26 h-8"
+              />
             </StatCard>
 
             <div className="absolute -top-5 sm:top-1/20 -left-5 m-2">
@@ -347,7 +393,10 @@ export default function Home() {
           </motion.div>
 
           <motion.div
-            variants={{ hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } }}
+            variants={{
+              hidden: { opacity: 0, y: 10 },
+              visible: { opacity: 1, y: 0 },
+            }}
             className="mb-4 sm:mb-0 relative col-span-2"
           >
             <StatCard
@@ -362,7 +411,12 @@ export default function Home() {
               descName="text-left"
               description="25+ years in the business. Our team ensures you get the right machine for your needs."
             >
-              <Tag title="Trusted" bgColor="bg-[#F1F5F9]" rounded="rounded-full" size="w-26 h-8" />
+              <Tag
+                title="Trusted"
+                bgColor="bg-[#F1F5F9]"
+                rounded="rounded-full"
+                size="w-26 h-8"
+              />
             </StatCard>
 
             <div className="absolute -top-5 sm:top-1/20 -left-5 m-2">
@@ -392,7 +446,12 @@ export default function Home() {
         }}
         className="flex flex-row flex-wrap items-center justify-center mt-8 gap-2 lg:gap-4 lg:m-24"
       >
-        <motion.div variants={{ hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } }}>
+        <motion.div
+          variants={{
+            hidden: { opacity: 0, y: 10 },
+            visible: { opacity: 1, y: 0 },
+          }}
+        >
           <Review
             comment="Purchased 3 machines for my bar. They've already paid for themselves in just 4 months! Great quality and service."
             name="Mike Richardson"
@@ -400,7 +459,12 @@ export default function Home() {
           ></Review>
         </motion.div>
 
-        <motion.div variants={{ hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } }}>
+        <motion.div
+          variants={{
+            hidden: { opacity: 0, y: 10 },
+            visible: { opacity: 1, y: 0 },
+          }}
+        >
           <Review
             comment="The team went above and beyond. They helped me pick the right machines and handled all the setup. Highly recommend!"
             name="Sarah Chen"
@@ -408,7 +472,12 @@ export default function Home() {
           ></Review>
         </motion.div>
 
-        <motion.div variants={{ hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } }}>
+        <motion.div
+          variants={{
+            hidden: { opacity: 0, y: 10 },
+            visible: { opacity: 1, y: 0 },
+          }}
+        >
           <Review
             comment="Best investment I've made for my gaming lounge. Customers love the variety and the machines run flawlessly."
             name="James Martinez"
