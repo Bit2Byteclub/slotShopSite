@@ -5,6 +5,7 @@ import Product from '../homeComponents/product';
 import Tag from '../homeComponents/tag';
 import { getFeaturedSlotMachines } from '@/services/slotMachineByFeatured';
 import { SlotInventory } from '@/types/slotMachines';
+import { motion } from 'framer-motion';
 
 
 function FeaturedSlots() {
@@ -49,38 +50,51 @@ function FeaturedSlots() {
     }
 
     return (
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <motion.div
+            className="grid gap-6 md:grid-cols-2 xl:grid-cols-3"
+            initial= "hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={{
+            hidden: {},
+            show: { transition: { staggerChildren: 0.15 } },
+            }}
+        >
             {featuredSlots.map((slot) => {
-                const displayPrice =
+            const displayPrice =
                 slot.is_on_sale && slot.sale_price != null
-                    ? slot.sale_price.toFixed(2)
-                    : slot.price.toFixed(2);
+                ? slot.sale_price.toFixed(2)
+                : slot.price.toFixed(2);
 
-                return (
+            return (
+                <motion.div
+                key={slot.id}
+                variants={{
+                    hidden: { opacity: 0, y: 10 },
+                    show: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+                }}
+                >
                 <Product
-                    key={slot.id}
                     tag={
                     slot.is_on_sale ? (
                         <span className="bg-red-500 text-white text-xs px-3 py-1 rounded-full">
                         On Sale
                         </span>
+                    ) : featuredSlots.indexOf(slot) === 0 ? (
+                        <Tag
+                        title="Best Seller"
+                        className="w-fit px-3 py-1 rounded-2xl flex flex-nowrap items-center gap-3 bg-secondary shadow-lg/20"
+                        />
+                    ) : featuredSlots.indexOf(slot) === 1 ? (
+                        <Tag
+                        title="New Arrival"
+                        className="w-fit px-3 py-1 rounded-2xl flex flex-nowrap items-center gap-3 bg-primary shadow-lg/20"
+                        />
                     ) : (
-                        featuredSlots.indexOf(slot) === 0 ? (
-                           <Tag
-                                title="Best Seller"
-                                className="w-fit px-3 py-1 rounded-2xl flex flex-nowrap items-center gap-3 bg-secondary shadow-lg/20"
-                            ></Tag>
-                        ) : featuredSlots.indexOf(slot) === 1 ? (
-                            <Tag
-                                title="New Arrival"
-                                className="w-fit px-3 py-1 rounded-2xl flex flex-nowrap items-center gap-3 bg-primary shadow-lg/20"
-                            ></Tag>
-                        ) : (
-                            <Tag
-                                title="Hot Deal"
-                                className="w-fit px-3 py-1 rounded-2xl flex flex-nowrap items-center gap-3 bg-secondary shadow-lg/20"
-                            ></Tag>
-                        )
+                        <Tag
+                        title="Hot Deal"
+                        className="w-fit px-3 py-1 rounded-2xl flex flex-nowrap items-center gap-3 bg-secondary shadow-lg/20"
+                        />
                     )
                     }
                     image={slot.image ?? undefined}
@@ -88,9 +102,10 @@ function FeaturedSlots() {
                     condition={slot.condition ?? "N/A"}
                     price={displayPrice}
                 />
-                );
+                </motion.div>
+            );
             })}
-        </div>
+        </motion.div>
     );
 } 
 
