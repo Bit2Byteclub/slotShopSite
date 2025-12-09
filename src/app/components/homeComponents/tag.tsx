@@ -34,7 +34,7 @@ function Tag({
           animate={{ x: "100%" }}
           transition={{
             repeat: Infinity,
-            duration: 1.5,
+            duration: 2,
             ease: "linear",
           }}
         />

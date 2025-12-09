@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { RevStarIcon } from "@/app/assets/icons";
 
 interface ReviewProps {
@@ -13,7 +14,23 @@ function Review({ comment, name, info, rating = 5 }: ReviewProps) {
       {/* Stars */}
       <div className="flex gap-1">
         {Array.from({ length: rating }).map((_, i) => (
-          <img key={i} src={RevStarIcon} alt="" className="w-4 h-4" />
+          <motion.img
+            key={i}
+            src={RevStarIcon}
+            alt=""
+            className="w-4 h-4"
+            animate={{ y: [-10, 0] }}
+            transition={{
+              type: "spring",
+              bounce: 0.4,
+              duration: 0.8,
+              ease: "easeInOut",
+              repeat: Infinity,
+              repeatType: "reverse",
+              repeatDelay: 0.3,
+              delay: i * 0.1, // Stagger each star for wave effect
+            }}
+          />
         ))}
       </div>
 
