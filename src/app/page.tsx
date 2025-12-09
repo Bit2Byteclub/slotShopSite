@@ -13,6 +13,7 @@ import {
   Review,
 } from "./components/homeComponents";
 import { motion } from "framer-motion";
+import { MdBorderColor } from "react-icons/md";
 
 export default function Home() {
   // Everything here will likely be moved down later because I think
@@ -226,6 +227,7 @@ export default function Home() {
                 bgColor="bg-[#F1F5F9]"
                 rounded="rounded-full"
                 size="w-20 h-8"
+                shimmer={true}
               />
             </StatCard>
 
@@ -264,6 +266,7 @@ export default function Home() {
                 bgColor="bg-[#F1F5F9]"
                 rounded="rounded-full"
                 size="w-20 h-8"
+                shimmer={true}
               />
             </StatCard>
 
@@ -302,6 +305,7 @@ export default function Home() {
                 bgColor="bg-[#F1F5F9]"
                 rounded="rounded-full"
                 size="w-20 h-8"
+                shimmer={true}
               />
             </StatCard>
 
@@ -340,6 +344,7 @@ export default function Home() {
                 bgColor="bg-[#F1F5F9]"
                 rounded="rounded-full"
                 size="w-26 h-8"
+                shimmer={true}
               />
             </StatCard>
 
@@ -378,6 +383,7 @@ export default function Home() {
                 bgColor="bg-[#F1F5F9]"
                 rounded="rounded-full"
                 size="w-26 h-8"
+                shimmer={true}
               />
             </StatCard>
 
@@ -416,6 +422,7 @@ export default function Home() {
                 bgColor="bg-[#F1F5F9]"
                 rounded="rounded-full"
                 size="w-26 h-8"
+                shimmer={true}
               />
             </StatCard>
 
