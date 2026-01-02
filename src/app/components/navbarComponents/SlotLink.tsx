@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -16,6 +16,11 @@ export default function SlotLink({ href, text, icon }: SlotLinkProps) {
   const rolls = 8; // Number of times to roll through
   const isActive = pathname === href;
   const [isAnimating, setIsAnimating] = useState(false);
+
+  // Reset animation state when pathname changes
+  useEffect(() => {
+    setIsAnimating(false);
+  }, [pathname]);
 
   // get the right css classes based on the route the user is in
   const getLinkClass = (path: string) => {
