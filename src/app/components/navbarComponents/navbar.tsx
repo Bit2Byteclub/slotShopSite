@@ -6,12 +6,14 @@ import { IoMdHome } from "react-icons/io";
 import { MdPolicy } from "react-icons/md";
 import { IoIosContacts } from "react-icons/io";
 import { GiTwoCoins } from "react-icons/gi";
+import { IoIosSearch } from "react-icons/io";
 
 const links = [
   { href: "/", text: "Home", icon: <IoMdHome /> },
   { href: "/slotMachines", text: "Slot Machines", icon: <GiTwoCoins /> },
   { href: "/policy", text: "Policy", icon: <MdPolicy /> },
   { href: "/contactUs", text: "Contact Us", icon: <IoIosContacts /> },
+  { href: "/search", text: "", icon: <IoIosSearch /> },
 ];
 
 const Navbar: React.FC = () => {
