@@ -1,16 +1,26 @@
-import { supabase } from '../lib/supabaseClient';
-import { SlotInventory } from '../types/slotMachines';
+import { supabase } from "../lib/supabaseClient";
+import { SlotInventory } from "../types/slotMachines";
 
-// just call the function to access all featured slot machines
-// so getFeaturedSlotMachines();
 export async function getFeaturedSlotMachines(): Promise<SlotInventory[]> {
-  const { data, error } = await supabase
-    .from('Slot_Inventory') // table name
-    .select('*') // select all columns
-    .eq('is_featured', true); // filter for featured slots
+  try {
+    const { data, error } = await supabase
+      .from("Slot_Inventory")
+      .select("*")
+      .eq("is_featured", true);
+
     if (error) {
-        console.error('Error fetching featured slot machines:', error);
-        return [];
+      throw new Error(
+        `Failed to fetch featured slot machines: ${error.message}`
+      );
     }
-    return data as SlotInventory[] || [];
+
+    return data || [];
+  } catch (error) {
+    if (error instanceof Error) {
+      throw error;
+    }
+    throw new Error(
+      "An unexpected error occurred while fetching featured slot machines"
+    );
+  }
 }
