@@ -201,7 +201,7 @@ export default function Home() {
               transition: { duration: 0.3, staggerChildren: 0.3 },
             },
           }}
-          className="w-full sm:grid sm:grid-cols-6 sm:row-span-3 gap-6"
+          className="max-w-7xl sm:grid sm:grid-cols-6 sm:row-span-3 gap-6"
         >
           <motion.div
             variants={{
