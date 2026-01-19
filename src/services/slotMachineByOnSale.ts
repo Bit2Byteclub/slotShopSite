@@ -1,14 +1,26 @@
-import { supabase } from '../lib/supabaseClient';
-import { SlotInventory } from '../types/slotMachines';
+import { supabase } from "../lib/supabaseClient";
+import { SlotInventory } from "../types/slotMachines";
 
 export async function getSlotMachinesByOnSale(): Promise<SlotInventory[]> {
-  const { data, error } = await supabase
-    .from('Slot_Inventory') // table name
-    .select('*') // select all columns
-    .eq('is_on_sale', true); // filter for on sale slots
+  try {
+    const { data, error } = await supabase
+      .from("Slot_Inventory")
+      .select("*")
+      .eq("is_on_sale", true);
+
     if (error) {
-        console.error('Error fetching on sale slot machines:', error);
-        return [];
+      throw new Error(
+        `Failed to fetch on sale slot machines: ${error.message}`
+      );
     }
-    return data as SlotInventory[] || [];
+
+    return data || [];
+  } catch (error) {
+    if (error instanceof Error) {
+      throw error;
+    }
+    throw new Error(
+      "An unexpected error occurred while fetching on sale slot machines"
+    );
+  }
 }

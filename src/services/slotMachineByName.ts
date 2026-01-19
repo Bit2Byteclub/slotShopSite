@@ -1,20 +1,29 @@
-import { supabase } from '../lib/supabaseClient';
-import { SlotInventory } from '../types/slotMachines';
+import { supabase } from "../lib/supabaseClient";
+import { SlotInventory } from "../types/slotMachines";
 
+export async function getSlotMachineByName(
+  name: string
+): Promise<SlotInventory | null> {
+  try {
+    const { data, error } = await supabase
+      .from("Slot_Inventory")
+      .select("*")
+      .eq("title", name)
+      .single();
 
-// will return a single slot machine by its name
-// or null if not found
-// could be useful for search functions, also can be used as example
-// is meant to be called like getSlotMachineByName("Mega Moolah");
-export async function getSlotMachineByName(name: string): Promise<SlotInventory | null> {
-  const { data, error } = await supabase
-    .from('Slot_Inventory')// table name
-    .select('*') // select all columns
-    .eq('title', name) // with the name provided
-    .single(); // expect a single result
-  if (error) {
-    console.error('Error fetching slot machine by name:', error);
-    return null;
+    if (error) {
+      if (error.code === "PGRST116") {
+        // no rows returned (this is expected, not an error)
+        return null;
+      }
+      throw new Error(`Failed to fetch slot machine by name: ${error.message}`);
+    }
+
+    return data;
+  } catch (error) {
+    if (error instanceof Error) {
+      throw error;
+    }
+    throw new Error("An unexpected error occurred while fetching slot machine");
   }
-  return data;
 }

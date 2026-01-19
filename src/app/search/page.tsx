@@ -4,8 +4,8 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { searchSlotMachines } from "@/services/slotMachineSearch";
 import { SlotInventory } from "@/types/slotMachines";
-import Product from "@/app/components/homeComponents/product";
-import Tag from "@/app/components/homeComponents/tag";
+import Product from "@/app/_components/homeComponents/product";
+import Tag from "@/app/_components/homeComponents/tag";
 
 export default function SearchPage() {
   const [query, setQuery] = useState("");
@@ -195,7 +195,7 @@ export default function SearchPage() {
             >
               <Product
                 name={machine.title}
-                image={machine.image || undefined}
+                image={machine.image_path || undefined}
                 condition={machine.condition || "Unknown"}
                 price={
                   machine.is_on_sale && machine.sale_price
