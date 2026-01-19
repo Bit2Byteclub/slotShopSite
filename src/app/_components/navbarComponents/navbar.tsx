@@ -5,6 +5,7 @@ import HamburgerComponent from "./hamburger";
 import { IoMdHome } from "react-icons/io";
 import { MdPolicy } from "react-icons/md";
 import { IoIosContacts } from "react-icons/io";
+import { IoIosSearch } from "react-icons/io";
 import { GiTwoCoins } from "react-icons/gi";
 import type { Route } from "next";
 
@@ -14,6 +15,7 @@ const links = [
   { href: "/slot-machines" as Route, text: "Slot Machines", icon: <GiTwoCoins /> },
   { href: "/about" as Route, text: "About", icon: <MdPolicy /> },
   { href: "/contact-us" as Route, text: "Contact", icon: <IoIosContacts /> },
+  { href: "/search" as Route, text: "", icon: <IoIosSearch /> },
 ];
 
 // main navbar component
